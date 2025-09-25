@@ -1,0 +1,48 @@
+// Base Person class
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  displayInfo() {
+    console.log(`Name: ${this.name}, Age: ${this.age}`);
+  }
+}
+
+// Student subclass extending Person
+class Student extends Person {
+  constructor(name, age, grade) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  displayInfo() {
+    super.displayInfo(); // Call the parent method
+    console.log(`Grade: ${this.grade}`);
+  }
+}
+
+// Teacher subclass extending Person
+class Teacher extends Person {
+  constructor(name, age, subject) {
+    super(name, age);
+    this.subject = subject;
+  }
+
+  displayInfo() {
+    super.displayInfo(); // Call the parent method
+    console.log(`Subject: ${this.subject}`);
+  }
+}
+
+// Create instances
+const student = new Student("Alice Johnson", 20, "10th");
+const teacher = new Teacher("Dr. Bob Smith", 45, "Mathematics");
+
+// Demonstrate calling methods
+console.log("Student Information:");
+student.displayInfo();
+
+console.log("\nTeacher Information:");
+teacher.displayInfo();
